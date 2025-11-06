@@ -33,6 +33,14 @@
   <script type="text/babel">
     const { useState } = React;
 
+    // Функція форматування ціни
+    const formatPrice = (price) => {
+      return new Intl.NumberFormat('uk-UA', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      }).format(price).replace(/,/g, ' ');
+    };
+
     // Іконки (спрощена версія lucide-react)
     const Icon = ({ name, className = "w-6 h-6" }) => {
       const icons = {
@@ -77,7 +85,7 @@
         { 
           id: 1, 
           name: 'CAD Pro Suite', 
-          price: 12500, 
+          price: 12500.00, 
           icon: '📐',
           category: 'Проектування', 
           rating: 4.8,
@@ -87,7 +95,7 @@
         { 
           id: 2, 
           name: 'Circuit Simulator', 
-          price: 8900, 
+          price: 8900.00, 
           icon: '⚡',
           category: 'Електроніка', 
           rating: 4.9,
@@ -97,7 +105,7 @@
         { 
           id: 3, 
           name: 'Structural Analysis', 
-          price: 15000, 
+          price: 15000.00, 
           icon: '🏗️',
           category: 'Будівництво', 
           rating: 4.7,
@@ -107,7 +115,7 @@
         { 
           id: 4, 
           name: 'PCB Designer Pro', 
-          price: 9500, 
+          price: 9500.00, 
           icon: '🔌',
           category: 'Електроніка', 
           rating: 4.6,
@@ -117,7 +125,7 @@
         { 
           id: 5, 
           name: 'Fluid Dynamics Kit', 
-          price: 18000, 
+          price: 18000.00, 
           icon: '💨',
           category: 'CFD', 
           rating: 4.9,
@@ -127,7 +135,7 @@
         { 
           id: 6, 
           name: 'Code Analyzer', 
-          price: 6500, 
+          price: 6500.00, 
           icon: '🔍',
           category: 'Розробка', 
           rating: 4.5,
